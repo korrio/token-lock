@@ -1,7 +1,7 @@
 import axios from 'axios';
 const { ethers } = require('ethers')
 
-
+import NextCors from 'nextjs-cors';
 
 export default async function handler(req, res) {
     const data = req.body;
@@ -25,6 +25,13 @@ export default async function handler(req, res) {
 
     const walletBalanceHuman = ethers.utils.formatUnits(balance, 18);
     const stakedBalanceHuman = ethers.utils.formatUnits(stakedBalance, 18);
+
+    await NextCors(req, res, {
+      // Options
+      methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+      origin: '*',
+      optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+   });
 
     res.status(200).json({ "wallet_balance": walletBalanceHuman, "staked_balance": stakedBalanceHuman })
 }
