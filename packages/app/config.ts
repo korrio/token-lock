@@ -1,18 +1,21 @@
 import { Chain, chain } from "wagmi"
 
-export const LOCKED_TOKEN_NAME = "Gnosis"
+export const LOCKED_TOKEN_NAME = "Jandra Token"
 export const LOCKED_TOKEN_SYMBOL = "JUTC"
-export const CLAIM_TOKEN_NAME = "Locked JUTC"
+export const CLAIM_TOKEN_NAME = "Jandra Token V2"
 export const CLAIM_TOKEN_SYMBOL = "veJUTC"
 
 export const INFURA_ID =
   process.env.NODE_ENV === "development"
-    ? "2d043e79a14e4145b4e07dd3eb3a5a4b"
-    : "a63b6fb491fa4ad3827b824218e5aa68"
+    ? "65da60a1c7fb43108a80a0feb9405e4d"
+    : "65da60a1c7fb43108a80a0feb9405e4d"
 
 const addInfuraProjectId = (chain: Chain) => ({
   ...chain,
-  rpcUrls: ["https://goerli.infura.io/v3/65da60a1c7fb43108a80a0feb9405e4d"]
+ rpcUrls: ["https://goerli.infura.io/v3/65da60a1c7fb43108a80a0feb9405e4d"]
+  // rpcUrls: chain.rpcUrls.map((url) =>
+  //   url.endsWith("infura.io/v3") ? `${url}/${INFURA_ID}` : url
+  // ),
 })
 
 // console.log("addInfuraProjectId",addInfuraProjectId);
@@ -22,12 +25,12 @@ export const COINGECKO_TOKEN_ID = "gnosis"
 
 // The first item will be used as the default chain
 export const CHAINS: Chain[] = [
-  ...(process.env.NODE_ENV === "development"
-    ? [addInfuraProjectId(chain.goerli)]
-    : []),
+  // ...(process.env.NODE_ENV === "development"
+  //   ? [addInfuraProjectId(chain.goerli)]
+  //   : []),
 
   // addInfuraProjectId(chain.mainnet),
-  // addInfuraProjectId(chain.goerli),
+  addInfuraProjectId(chain.goerli),
 
   // {
   //   id: 100,

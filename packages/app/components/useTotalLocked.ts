@@ -16,11 +16,12 @@ interface Breakdown {
 //   56
 // )
 
-const goerliProvider = new providers.StaticJsonRpcProvider(
+const goerliProvider = new providers.JsonRpcProvider(
   CHAINS.find((chain) => chain.id === 5)?.rpcUrls[0],
   5
 )
 
+console.log("CHAINS",CHAINS);
 console.log("goerliProvider",goerliProvider);
 
 // const gnosisChainProvider = new providers.StaticJsonRpcProvider(
