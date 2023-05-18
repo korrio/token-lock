@@ -4,8 +4,8 @@ const GnosisLogo: React.FC = () => (
   <div className={cls.container}>
     <img
       className={cls.logo}
-      src="/gno.svg"
-      alt="Gnosis Logo"
+      src="https://socialbureau.finance/images/farms/JUTC.svg"
+      alt="Jandra Token Logo"
       height={36}
       width={36}
     />

@@ -57,7 +57,7 @@ const Withdraw: React.FC = () => {
         decimals={decimals}
         onChange={setAmount}
         disabled={pending}
-        unit="LGNO"
+        unit="JUTC"
         meta={
           <Button
             link
@@ -89,7 +89,7 @@ const Withdraw: React.FC = () => {
         {pending && <Spinner />}
       </Button>
 
-      <Balance className={utility.mt8} label="GNO Balance" />
+      <Balance className={utility.mt8} label="JUTC Balance" />
 
       {error && !dismissedErrors.includes(error) && (
         <Notice

@@ -27,6 +27,10 @@
   --navHeight: 66px;
 }
 
+.d-none {
+  display: none;
+}
+
 html,
 body {
   padding: 0;

@@ -8,12 +8,15 @@ const TotalLockedStat: React.FC = () => {
   const config = useTokenLockConfig()
   const [totalLocked] = useTotalLocked()
 
+  console.log("totalLocked",totalLocked);
+
   return (
     <div className={`${cls.item} ${cls.fullWidth}`}>
       <dt>
-        <div className={cls.label}>Total GNO Locked</div>
+        <div className={cls.label}>Total JUTC Locked</div>
         <TotalLockedBreakdown />
       </dt>
+
       <dd>{totalLocked ? formatToken(totalLocked, config.decimals) : "…"}</dd>
     </div>
   )

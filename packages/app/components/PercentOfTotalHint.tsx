@@ -28,15 +28,15 @@ const PercentOfTotalHint: React.FC<{ balance?: BigNumber }> = ({ balance }) => {
         <img src="/info.svg" alt="Learn more" />
         <div className={cls.dropdown}>
           <p>
-            Your current share of the total locked GNO would give you a grant of
-            <strong>
+            Your current share of the total locked JUTC would give you a grant to be an Inspector or Data seller depends on SocialBureau's dApp you are participating. <br/> 
+{/*            <strong>
               ~{formatAmount((percent / 100) * SUPPLY_OF_COW)} $COW.
-            </strong>{" "}
-            This value will go down as more people lock their GNO.
+            </strong>{" "}*/}
+            This value will go down as more people lock their JUTC.
           </p>
           <p>
-            A total of 50M $COW are distributed to people committing to hold
-            their GNO long-term.
+            A total of 50M $JUTCv2 allocation are distributed to people committing to hold
+            their JUTC long-term.
           </p>
         </div>
       </div>

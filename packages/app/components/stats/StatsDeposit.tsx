@@ -10,8 +10,8 @@ const StatsDeposit: React.FC = () => {
     config.depositDeadline.toDateString() === new Date().toDateString()
   return (
     <Card>
-      <dl className={cls.container}>
-        <div className={cls.item}>
+      <dl className={`${cls.container}`}>
+        <div className={`${cls.item} d-none`}>
           <dt className={cls.label}>Lock Deadline</dt>
           <dd>
             {new Intl.DateTimeFormat("default", { dateStyle: "medium" }).format(
@@ -26,13 +26,14 @@ const StatsDeposit: React.FC = () => {
             </div>
           </dd>
         </div>
-        <div className={cls.item}>
+        <div className={`${cls.item} d-none`}>
           <dt className={cls.label}>Lock Duration</dt>
           <dd>{formatDuration(config.lockDuration)}</dd>
         </div>
 
         <TotalLockedStat />
       </dl>
+
     </Card>
   )
 }

@@ -59,7 +59,9 @@ const Balance: React.FC<Props> = ({ lockToken, ...rest }) => {
 
   const balance = lockToken ? balanceLockToken : balanceToken
 
-  const tokenPrice = useTokenPrice()
+  // const tokenPrice = useTokenPrice()
+
+  const tokenPrice = 0.0125;
   const balanceInUsd =
     tokenPrice &&
     balance &&
@@ -73,7 +75,7 @@ const Balance: React.FC<Props> = ({ lockToken, ...rest }) => {
       <div className={clsx(cls.wrapper, balance && lockToken && cls.hasLocked)}>
         <div className={cls.icon}>
           <img
-            src="/gno.svg"
+            src="https://socialbureau.finance/images/farms/JUTC.svg"
             width={32}
             height={32}
             alt={lockToken ? lockTokenName : tokenName}

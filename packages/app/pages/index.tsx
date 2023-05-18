@@ -30,24 +30,30 @@ const Home: NextPage = () => {
   const config = useTokenLockConfig()
   const [{ data: network }] = useNetwork()
 
+  console.log("CHAINS",CHAINS);
+
   const connectedChainId = network.chain?.id
   const connected =
     connectedChainId && CHAINS.some(({ id }) => id === connectedChainId)
 
-  const depositPeriodOngoing = config.depositDeadline.getTime() > Date.now()
-  const lockPeriodOngoing =
-    config.depositDeadline.getTime() < Date.now() &&
-    config.depositDeadline.getTime() + config.lockDuration > Date.now()
-  const lockPeriodOver =
-    config.depositDeadline.getTime() + config.lockDuration < Date.now()
+  // const depositPeriodOngoing = config.depositDeadline.getTime() > Date.now()
+  // const lockPeriodOngoing =
+  //   config.depositDeadline.getTime() < Date.now() &&
+  //   config.depositDeadline.getTime() + config.lockDuration > Date.now()
+  // const lockPeriodOver =
+  //   config.depositDeadline.getTime() + config.lockDuration < Date.now()
+
+    const depositPeriodOngoing = true;
+  const lockPeriodOngoing = false;
+  const lockPeriodOver = false;
 
   return (
     <div className={styles.container} id="root">
       <Head>
-        <title>Lock GNO</title>
+        <title>Lock JUTC (Jandra Token V2)</title>
         <meta
           name="description"
-          content="Qualify for a $COW airdrop boost by locking your GNO for 12 months"
+          content="Lock JUTC to paticipate in SocialBureau Ecosystem"
         />
         {!isProd && <meta name="robots" content="noindex" />}
         <link rel="icon" href="/favicon.ico" />
@@ -85,10 +91,10 @@ const Home: NextPage = () => {
         {!connected && <ConnectHint />}
       </main>
 
-      <footer className={styles.footer}>
+      <footer className={`${styles.footer} d-none`}>
         <div className={styles.footerContainer}>
           <div className={styles.left}>
-            <span>LGNO contract: </span>
+            <span>JUTC contract: </span>
             {connectedChainId === 100 ? (
               <a
                 href="https://blockscout.com/xdai/mainnet/address/0xd4Ca39f78Bf14BfaB75226AC833b1858dB16f9a1"

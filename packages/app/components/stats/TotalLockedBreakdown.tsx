@@ -13,32 +13,32 @@ const TotalLockedBreakdown: React.FC<{ balance?: BigNumber }> = () => {
       <img src="/info.svg" alt="Show details" title="Show details" />
       <div className={cls.dropdown}>
         <dl className={cls.breakdown}>
-          <div>
-            <dt>GNO locked on Mainnet:</dt>
+{/*          <div>
+            <dt>JUTC locked on BNB Smartchain:</dt>
             <dd>
-              {breakdown.mainnet
-                ? formatToken(breakdown.mainnet, config.decimals)
+              {breakdown.bsc
+                ? formatToken(breakdown.bsc, config.decimals)
+                : "…"}
+            </dd>
+          </div> */}
+          <div>
+            <dt>JUTC locked on Goerli Chain:</dt>
+            <dd>
+              {breakdown.goerli
+                ? formatToken(breakdown.goerli, config.decimals)
                 : "…"}
             </dd>
           </div>
-          <div>
-            <dt>GNO locked on Gnosis Chain:</dt>
-            <dd>
-              {breakdown.gnosisChain
-                ? formatToken(breakdown.gnosisChain, config.decimals)
-                : "…"}
-            </dd>
-          </div>
-          <div>
+         {/* <div>
             <dt>GNO staked by Gnosis Beacon Chain validators:</dt>
             <dd>
               {breakdown.staked
                 ? formatToken(breakdown.staked, config.decimals)
                 : "…"}
             </dd>
-          </div>
+          </div>*/}
           <div className={cls.total}>
-            <dt>Total locked GNO:</dt>
+            <dt>Total locked JUTC:</dt>
             <dd>
               {totalLocked ? formatToken(totalLocked, config.decimals) : "…"}
             </dd>

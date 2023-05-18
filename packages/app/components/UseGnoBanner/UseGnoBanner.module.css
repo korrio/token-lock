@@ -2,7 +2,8 @@
 }
 
 .card {
-  background-image: url(/gnochainbg.svg);
+/*  background-image: url(/gnochainbg.svg);*/
+  background-image: url(https://www.socialbureau.io/wp-content/uploads/2022/11/sb-bg-cover.jpg);
   background-size: 120%;
   background-position: center;
   padding: 30px;

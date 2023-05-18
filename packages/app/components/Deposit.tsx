@@ -75,7 +75,7 @@ const Deposit: React.FC = () => {
       <Balance label="Balance" />
       <AmountInput
         name="depositAmount"
-        unit="GNO"
+        unit="JUTC"
         className={utility.mt4}
         value={amount}
         max={balance}
