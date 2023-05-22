@@ -30,7 +30,7 @@ const StatsDeposit: React.FC = () => {
           <dt className={cls.label}>Lock Duration</dt>
           <dd>{formatDuration(config.lockDuration)}</dd>
         </div>
-
+        
         <TotalLockedStat />
       </dl>
 

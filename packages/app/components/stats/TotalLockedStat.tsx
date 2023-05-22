@@ -11,14 +11,24 @@ const TotalLockedStat: React.FC = () => {
   console.log("totalLocked",totalLocked);
 
   return (
-    <div className={`${cls.item} ${cls.fullWidth}`}>
-      <dt>
-        <div className={cls.label}>Total JUTC Locked</div>
-        <TotalLockedBreakdown />
-      </dt>
+    <>
+      <div className={`${cls.item} ${cls.fullWidth}`}>
+        <dt>
+          <div className={cls.label}>JUTC price in USD</div>
+          
+        </dt>
 
-      <dd>{totalLocked ? formatToken(totalLocked, config.decimals) : "…"}</dd>
-    </div>
+        <dd>$0.0125</dd>
+      </div>
+      <div className={`${cls.item} ${cls.fullWidth}`}>
+        <dt>
+          <div className={cls.label}>Total JUTC Locked</div>
+          <TotalLockedBreakdown />
+        </dt>
+
+        <dd>{totalLocked ? formatToken(totalLocked, config.decimals) : "…"}</dd>
+      </div>
+    </>
   )
 }
 
