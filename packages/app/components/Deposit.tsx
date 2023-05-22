@@ -14,6 +14,12 @@ import useTokenLockConfig from "./useTokenLockConfig"
 import utility from "../styles/utility.module.css"
 import Notice from "./Notice"
 
+import clsx from "clsx"
+import Field from "./Field"
+// import cls from "./Field.module.css"
+import cls from "./Packages.module.css"
+import { formatUnits } from "ethers/lib/utils"
+
 const Deposit: React.FC = () => {
   const [amount, setAmount] = useState<BigNumber | undefined>(undefined)
 
@@ -70,9 +76,59 @@ const Deposit: React.FC = () => {
     }
   }, [depositedBlock])
 
+  const label = "Select a package"
+  const meta = ""
+
+  const tokenPrice = 0.0125;
+
+  const balance10InUsd = BigNumber.from("800000000000000000000");
+  const balance100InUsd = BigNumber.from("8000000000000000000000");;
+  const balance500InUsd = BigNumber.from("45000000000000000000000");
+
+
   return (
     <Card>
+     
       <Balance label="Balance" />
+
+      <label className={clsx("", cls.container)}>
+        <div className={cls.header}>
+          {label && <span className={cls.label}>{label}</span>}
+          {meta && <span className={cls.meta}>{meta}</span>}
+        </div>
+      </label>
+      <dl className={`${cls.container}`}>
+        <div className={`${cls.item}`}>
+          <Button
+              primary
+              onClick={() => {
+              if (balance) {
+                setAmount(balance10InUsd)
+              }}}>
+              $10
+          </Button>
+        </div>
+        <div className={`${cls.item}`}>
+          <Button
+                primary
+                onClick={() => {
+                if (balance) {
+                  setAmount(balance100InUsd)
+                }}}>
+                $100
+          </Button>
+        </div>
+        <div className={`${cls.item}`}>
+          <Button
+              primary
+              onClick={() => {
+              if (balance) {
+                setAmount(balance500InUsd)
+              }}}>
+              $500
+          </Button>
+        </div>
+      </dl>
       <AmountInput
         name="depositAmount"
         unit="JUTC"
